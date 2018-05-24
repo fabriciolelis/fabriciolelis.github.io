@@ -1,26 +1,31 @@
 # Welcome to Jekyll!
 
 # Website settings
-title: Jalpc
-description: Jack's blog,use Jekyll and github pages.
-keywords: Jack,Jalpc,blog,Jekyll,github,gh-pages
-baseurl:  /Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
-url: https://jarrekk.github.io/Jalpc  # url should be 'http://<github_username>.github.io/homepage' as before
-# url: http://127.0.0.1:4000
-img_path: /Jalpc/static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
+title: Full-stack Machine Learning Notebook
+description: Joining the dots between Machine Learning and Full-stack App Development
+keywords: ai, machine learning, deep learning, Full-stack, Jalpc, blog, Jekyll, github, gh-pages
+
+# option 1 - publish to http://127.0.0.1:4000/ or https://atlas7.github.io
+#baseurl: /   #comment this out entirely. (otherwise CSS issue)
+url: https://atlas7.github.io  # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage
+img_path: /static/assets/img/blog  # /homepage/static/assets/img/blog
+
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: GitHub  # Be used at blog posts' author.
-  first_name: Hub  # Be used at index page about me section.
-  last_name: Git  # Be used at index page about me section.
+  name: Johnny Chan  # Be used at blog posts' author.
+  first_name: Johnny  # Be used at index page about me section.
+  last_name: Chan  # Be used at index page about me section.
   avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
-  github_username: jarrekk  # Leave blank if you don't have now
-  linkedin_id: jarrekk # Leave blank if you don't have now
-  facebook_username: jiakunnj  # Leave blank if you don't have now
-  twitter_username: jiakun614  # Leave blank if you don't have now
-  email: me@jarrekk.com  # Leave blank if you don't have now
-  cv: http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
+  github_username: Atlas7  # Leave blank if you don't have now
+  linkedin_id: johnnycnchan # Leave blank if you don't have now
+  facebook_username: johnnychan0302  # Leave blank if you don't have now
+  twitter_username: jAtlas7  # Leave blank if you don't have now
+  stackoverflow_id: "4517234" # Leave blank if you don't have now
+  stackoverflow_name: atlas7  # Leave blank if you don't have now
+  home2_url: http://mathalope.co.uk # Leave blank if you don't have now
+  email: johnnychan0302@gmail.com  # Leave blank if you don't have now
+  cv: # http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
     - name: icon-apache
@@ -28,27 +33,19 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: fa-linux
     - name: icon-apache
-  desc: Introduce myself will be here.  # Describe yourself.
+  desc: Full-stack Machine Learning Engineer on a mission to joining the dots.  # Describe yourself.
 
 # comment
-disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-  name: jalpc
+#disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
+#  name: jalpc
 
 # analytics
-## google analytics
+#google analytics
 ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-  id: UA-93473370-3
-
-## google optimize
-go:
-  # id:
-
-## growingIO
-gio:  # if you wanna this feature, go to https://www.growingio.com/ to get your configuration; if not, comment following line.
-  # id:
+   id: UA-53715022-5
 
 ## donation
-donation: on  # type 'on'/'off' to choice display donation button at post page or not
+donation: off  # type 'on'/'off' to choice display donation button at post page or not
 
 ## carousels
 index_carousel: on  # index page carousel switch
@@ -64,7 +61,19 @@ encoding: utf-8
 # other settings
 highlighter: rouge
 markdown: kramdown
+#kramdown:
+#  input: GFM
+#  syntax_highlighter: rouge
+#  auto_ids: true
+
 kramdown:
-  input: GFM
+  auto_ids:       true
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1
   syntax_highlighter: rouge
 
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
