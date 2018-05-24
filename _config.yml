@@ -1,30 +1,30 @@
-# Welcome to Jekyll!
+# Welcome to My WebSite!
 
 # Website settings
-title: Full-stack Machine Learning Notebook
-description: Joining the dots between Machine Learning and Full-stack App Development
-keywords: ai, machine learning, deep learning, Full-stack, Jalpc, blog, Jekyll, github, gh-pages
+title: Software Engineer
+description:
+keywords: software engineer, github, gh-pages
 
 # option 1 - publish to http://127.0.0.1:4000/ or https://atlas7.github.io
 #baseurl: /   #comment this out entirely. (otherwise CSS issue)
-url: https://atlas7.github.io  # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage
+url: https://fabriciolelis.github.io  # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage
 img_path: /static/assets/img/blog  # /homepage/static/assets/img/blog
 
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: Johnny Chan  # Be used at blog posts' author.
-  first_name: Johnny  # Be used at index page about me section.
-  last_name: Chan  # Be used at index page about me section.
+  name: Fabrício Lélis  # Be used at blog posts' author.
+  first_name: Fabrício  # Be used at index page about me section.
+  last_name: Lélis  # Be used at index page about me section.
   avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
-  github_username: Atlas7  # Leave blank if you don't have now
-  linkedin_id: johnnycnchan # Leave blank if you don't have now
-  facebook_username: johnnychan0302  # Leave blank if you don't have now
-  twitter_username: jAtlas7  # Leave blank if you don't have now
+  github_username: fabriciolelis  # Leave blank if you don't have now
+  linkedin_id: fabriciolelis # Leave blank if you don't have now
+  facebook_username: fabricio.lelis  # Leave blank if you don't have now
+  twitter_username: fabriciolelis  # Leave blank if you don't have now
   stackoverflow_id: "4517234" # Leave blank if you don't have now
-  stackoverflow_name: atlas7  # Leave blank if you don't have now
-  home2_url: http://mathalope.co.uk # Leave blank if you don't have now
-  email: johnnychan0302@gmail.com  # Leave blank if you don't have now
+  stackoverflow_name:   # Leave blank if you don't have now
+  home2_url:  # Leave blank if you don't have now
+  email: fabriciolelis@gmail.com  # Leave blank if you don't have now
   cv: # http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
@@ -41,8 +41,8 @@ author:  # change following line to your infomation.
 
 # analytics
 #google analytics
-ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-   id: UA-53715022-5
+#ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
+#id: UA-53715022-5
 
 ## donation
 donation: off  # type 'on'/'off' to choice display donation button at post page or not

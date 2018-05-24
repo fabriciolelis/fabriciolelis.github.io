@@ -2,18 +2,15 @@
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 
 - name:
-    detail: fungai.org
+    detail: Virtus
   desc:
     detail: >
-      I created fungai.org with the aim helping scientists and enthusiasts to easily identify wild mushroom species
-      from images using deep learning technologies. This project is in partnership with Intel.
-      Initial prototype stack: JavaScript, ReactJS, jason-server, ImageNet, Heroku.
-      Upcoming stack: Tensorflow, Python, Docker.
+      Trabalho na empresa de pesquisa Virtus.
 
   date:
-    detail: Nov 2017 - present, London
+    detail: Nov 2014 - Até o presente, Campina Grande
   job:
-    detail: Project Owner, Full-stack Machine Learning Engineer
+    detail: Software Engineer
   icon: fa-plus-square
 
 - name:
