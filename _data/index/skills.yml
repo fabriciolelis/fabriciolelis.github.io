@@ -6,4 +6,4 @@ id : cs
 #percentage: 100, 35, 65, 80, 70, 90, 50
 
 aspects: Curiosity, GitHub, JavaScript, Python, SQL, Angular, C++, C#, SystemVerilog, Verilog, SystemC, Scrum, IoT
-percentage: 100, 100, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90
+#percentage: 100, 80, 70, 70, 70, 70, 70, 70, 60, 60, 60, 70, 70

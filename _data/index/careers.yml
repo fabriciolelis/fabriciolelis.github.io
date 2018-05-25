@@ -5,26 +5,28 @@
     detail: Virtus
   desc:
     detail: >
-      Trabalho na empresa de pesquisa Virtus.
+       I'm working at Virtus in projects that it has LG with a partner. Projects about: Multi-platform Desktop
+       application, Industry 4.0, Web, Mobile, Embedded Linux system and Internet Of Things, Windows Desktop
+       applications. In these project I had the working experience with the following technologies: JavaScript, C/C++,
+       Angular, NodeJS, Electron, MongoDB, Embedded Linux, .NET/C#.
 
   date:
-    detail: Nov 2014 - Até o presente, Campina Grande
+    detail: Dec 2014 - present, Campina Grande
   job:
     detail: Software Engineer
   icon: fa-plus-square
 
 - name:
-    detail: Mathalope.co.uk
+    detail: Master's Degree
   desc:
     detail: >
-      I created Mathalope.co.uk to share notes and research findings in machine learning, full-stack development, and
-      programming. Since establishment the blog has been visited by 120,000+ students and professionals from
-      200+ countries. My current research focus is on combining machine learning with full-stack app development.
-      Blog Stack: WordPress, Gist, Mathjax, Markdown. Content Stack: Python, JavaScript, etc.
+      I have master degree for Federal University of Campina Grande. My research aims to evaluate the efficiency of
+      mel-frequency cepstral coefficients in the representation of the characteristics of a speaker in an automatic
+      speaker verification.
   date:
-    detail: Mar 2014 - present, London
+    detail: Mar 2012 - Dec 2014, Campina Grande
   job:
-    detail: Author, Full-stack Machine Learning Engineer
+    detail: Master Candidate
   icon: fa-plus-square
 
 #- name:
