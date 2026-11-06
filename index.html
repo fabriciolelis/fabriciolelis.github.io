@@ -1,68 +1,143 @@
----
-layout: blog
-title: index
-permalink: /
----
-
-<div class="navbar-wrapper">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#page-top" id="i18_title"><span data-i18n="website.title">{{ site.title }}</span></a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right" id="i18_navbar">
-          {% for section in site.data.landing %}
-          <li>
-            {% if section.page %}
-              <a class="page-scroll" href="{{section.page}} ">
-            {% else %}
-              <a class="page-scroll" href="{{section.id|prepend:'#'}} ">
-            {% endif %}
-              <span data-i18n="{{ section.i18n }}">{{ section.name }}</span>
-            </a>
-          </li>
-          {% endfor %}
-          {% for language in site.data.index.language %}
-          <li>
-            <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
-              <img src="{{ language.flag | prepend: site.baseurl }}" alt="language.flag" height="16" width="16">
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-{% if site.index_carousel %}
-{% include carousel.html %}
-{% endif %}
-
-{% for section in site.data.landing %}
-{% assign loopindex = forloop.index | modulo: 2 %}
-<section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.css }}" style="margin-top: 0;">
-  {% include sections/{{section.tpl}} %}
-</section>
-{% endfor %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fabrício Lélis · Senior Cloud Engineer</title>
+<meta name="description" content="Fabrício Lélis, Senior Cloud Engineer in Gothenburg. AWS, Terraform, DevSecOps and CI infrastructure for software-defined vehicles." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-iframe {
-  -moz-transform: scale(0.25, 0.25);
-  -webkit-transform: scale(0.25, 0.25);
-  -o-transform: scale(0.25, 0.25);
-  -ms-transform: scale(0.25, 0.25);
-  transform: scale(0.25, 0.25);
-  -moz-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-}
+  :root {
+    --bg: #fafafa; --card: #ffffff; --fg: #09090b; --muted: #52525b;
+    --border: #e4e4e7; --accent: #2563eb; --accent-soft: #eff6ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #09090b; --card: #18181b; --fg: #fafafa; --muted: #a1a1aa;
+      --border: #27272a; --accent: #60a5fa; --accent-soft: #172554;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 400 1rem/1.6 "Space Grotesk", system-ui, sans-serif;
+  }
+  h1, h2, h3 { font-family: Archivo, system-ui, sans-serif; line-height: 1.2; margin: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 16px; top: 16px; background: var(--card); padding: 8px 12px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 96px 0 56px; }
+  .eyebrow { color: var(--muted); font-size: .95rem; margin: 0 0 12px; }
+  h1 { font-size: clamp(2.4rem, 6vw, 3.5rem); font-weight: 700; letter-spacing: -.02em; }
+  .role { font-size: 1.25rem; margin: 12px 0 24px; color: var(--muted); }
+  .role strong { color: var(--fg); font-weight: 500; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; padding: 0; margin: 0; list-style: none; }
+  .links a {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px;
+    border: 1px solid var(--border); border-radius: 8px; background: var(--card);
+    color: var(--fg); text-decoration: none; font-weight: 500; transition: border-color .2s;
+  }
+  .links a:hover { border-color: var(--accent); }
+  .links svg { width: 18px; height: 18px; fill: currentColor; }
+
+  section { padding: 40px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 20px; }
+  p { margin: 0 0 16px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .tags li { padding: 4px 12px; border-radius: 999px; background: var(--accent-soft); font-size: .9rem; }
+
+  .stat { font-family: Archivo, sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+  .card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .card p { color: var(--muted); margin: 0; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .grid .card { margin: 0; }
+  ul.plain { margin: 0; padding-left: 20px; }
+  ul.plain li { margin-bottom: 8px; }
+  .muted { color: var(--muted); }
+  footer { padding: 40px 0 64px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--border); }
 </style>
-<iframe src="https://www.maimemo.com/share/page/?uid=779139&pid=660" style="display: none;"></iframe>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Gothenburg, Sweden · from Campina Grande, Brazil</p>
+    <h1>Fabrício Lélis</h1>
+    <p class="role"><strong>Senior Cloud Engineer</strong> at Coretura, building cloud and CI infrastructure for software-defined commercial vehicles.</p>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/fabriciolelis">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn</a></li>
+      <li><a href="https://github.com/fabriciolelis">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>
+        GitHub</a></li>
+    </ul>
+  </header>
+</div>
+
+<main id="main" class="wrap">
+  <section aria-labelledby="about">
+    <h2 id="about">About</h2>
+    <p>I've worked in technology for 11+ years, the last 5+ on cloud. Today I design and run AWS infrastructure, CI pipelines and security controls for an automotive software platform.</p>
+    <p>I started in hardware: FPGA prototyping, ASIC design and the verification of IP cores at UFCG. That background still shapes how I work. I test what I build, and I care about what happens when it fails.</p>
+    <ul class="tags" aria-label="Tools I work with">
+      <li>AWS</li><li>Terraform</li><li>AWS CDK</li><li>Kubernetes</li><li>Helm</li>
+      <li>Docker</li><li>GitHub Actions</li><li>Bazel</li><li>Prometheus</li><li>Python</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="oss">
+    <h2 id="oss">Open source</h2>
+    <div class="card">
+      <p class="stat">14</p>
+      <h3 style="margin-top:8px">merged pull requests to <a href="https://github.com/awslabs/virtual-engineering-workbench">awslabs/virtual-engineering-workbench</a></h3>
+      <p>A platform for self-service engineering workbenches on AWS. I contributed deployment into an existing VPC, a <code>--diff</code> preview of CDK changes, multi-region deploy and destroy, runtime resource tagging, and fixes to the AMI image pipeline.
+      <a href="https://github.com/awslabs/virtual-engineering-workbench/pulls?q=is%3Apr+is%3Amerged+author%3Afabriciolelis">See all 14</a></p>
+    </div>
+    <p class="muted">Also merged: <a href="https://github.com/foxglove/helm-charts/pull/106">foxglove/helm-charts</a> (proxy configuration) and <a href="https://github.com/CloudCompare/CloudCompare/pull/812">CloudCompare</a> (Brazilian Portuguese translation).</p>
+  </section>
+
+  <section aria-labelledby="projects">
+    <h2 id="projects">Projects</h2>
+    <div class="grid">
+      <div class="card"><h3><a href="https://github.com/fabriciolelis/terraform-ecs-rds-template">terraform-ecs-rds-template</a></h3><p>AWS infrastructure for a containerized app on ECS Fargate with an RDS database.</p></div>
+      <div class="card"><h3><a href="https://github.com/fabriciolelis/monitoring">monitoring</a></h3><p>Monitors Docker containers with Prometheus and Alertmanager.</p></div>
+      <div class="card"><h3><a href="https://github.com/fabriciolelis/flask-celery">flask-celery</a></h3><p>Flask application with Celery background workers.</p></div>
+      <div class="card"><h3><a href="https://github.com/fabriciolelis/formula-insights-api">formula-insights-api</a></h3><p>API and data ingestion application.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="hardware">
+    <h2 id="hardware">Earlier work in hardware</h2>
+    <ul class="plain">
+      <li><strong>Speaker verification IP core</strong> for real-time speaker verification (IP-SoC 2010)</li>
+      <li><strong>Terpsicore</strong>, a low-power MPEG-4 video decoder fabricated in 0.35 µm CMOS (2009)</li>
+      <li><strong>eTBc</strong>, a tool that semi-automatically generates testbenches, with the VeriSC methodology</li>
+      <li><strong>Utopia</strong>, a 32-bit pipelined RISC processor with cache, from RTL to ASIC</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="certs">
+    <h2 id="certs">Certifications and languages</h2>
+    <ul class="plain">
+      <li>AWS Fundamentals specialization (Coursera)</li>
+      <li>Building Containerized Applications on AWS (Coursera)</li>
+      <li>Docker Mastery with Kubernetes + Swarm (Udemy)</li>
+      <li>EF SET English, C1 Advanced</li>
+    </ul>
+    <p class="muted" style="margin-top:16px">Portuguese (native) · English (full professional)</p>
+  </section>
+</main>
+
+<footer class="wrap">© 2026 Fabrício Lélis</footer>
+</body>
+</html>
